@@ -16,16 +16,34 @@ export const Pagina1Screen = ({navigation}: Props) => {
         />
 
         <Text>NAvegar con argumentos</Text>
-        <TouchableOpacity
-          onPress={()=> navigation.navigate('PersonaScreen', {
-            //Enviar argumentos a la otra pantalla
-            id:1,
-            nombre:'Pedro'
-          })
-          }
-        >
-          <Text>Pedro</Text>
-        </TouchableOpacity>
+        <View style={{flexDirection:'row'}}>
+          <TouchableOpacity
+            style={{
+              ...styles.botonGrande,
+              backgroundColor: '#5856d6'
+            }}
+            onPress={()=> navigation.navigate('PersonaScreen', {
+              //Enviar argumentos a la otra pantalla
+              id:1,
+              nombre:'Pedro'
+            })
+            }
+          >
+            <Text style={styles.botonGrandeTexto}>Pedro</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.botonGrande}
+            onPress={()=> navigation.navigate('PersonaScreen', {
+              //Enviar argumentos a la otra pantalla
+              id:2,
+              nombre:'Maria'
+            })
+            }
+          >
+            <Text style={styles.botonGrandeTexto}>Maria</Text>
+          </TouchableOpacity>
+        </View>
+        
     </View>
   )
 }
